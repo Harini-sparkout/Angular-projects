@@ -1,0 +1,11 @@
+<h2>Angular events</h2>
+<button (click)="onClick()">click me</button><br>
+<div (mouseover)="onMouseOver()" style="width:200px; height:100px; border:1px solid black; text-align:center; line-height:100px;" >Hover me</div><br>
+<input type="text" placeholder="click here" (blur)="onBlur()" [(ngModel)]= "formText" name="formtext"><br>
+<form (submit)="onSubmit()">
+    <button type="submit">submit</button>
+</form>
+
+
+
+
