@@ -14,7 +14,6 @@ import { Hooks } from './hooks/hooks';
 })
 export class App {
   email :string='';
-  emailMessage='';
   password='';
 
    
