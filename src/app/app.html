@@ -1,6 +1,6 @@
 <div style=" margin-top:50px; border:20px">
-  <h1>local storage</h1>
-  <input [(ngModel)]="email" placeholder="enter email" (change)="onEmailChange"><br>
+  <h2>local storage</h2>
+  <input [(ngModel)]="email" placeholder="enter email" ><br>
   <input [(ngModel)]="password" placeholder="enter password"><br>
   <button (click) ="localstorage()">submit</button><br>
   <button (click)="getEmail()">Get Email</button>
@@ -10,5 +10,16 @@
   </div>
 </div>
 <app-session></app-session>
-<app-event></app-event>
-<p>{{ emailMessage }}</p>
+
+
+
+<app-event [data]="data"></app-event>
+
+
+<input type="text" [(ngModel)]="inputValue" placeholder="new value">
+
+<button (click)="changeData()">Change Data</button>
+<app-hooks></app-hooks>
+
+
+
