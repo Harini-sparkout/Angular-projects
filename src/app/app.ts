@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component,OnInit,OnChanges } from '@angular/core';
+import { Component,OnInit,OnChanges, SimpleChanges,Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Session } from './session/session';
 import { Event } from "./event/event";
+import { Hooks } from './hooks/hooks';
 
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule, CommonModule, Session, Event],
+  imports: [FormsModule, CommonModule, Session, Event,Hooks],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -15,6 +16,8 @@ export class App {
   email :string='';
   emailMessage='';
   password='';
+
+   
   retrievedEmail: string | null = '';
     localstorage(){
            if(this.email===''||this.password===''){
@@ -37,14 +40,21 @@ export class App {
       alert('No email found in localStorage');
     }
   }
+
+    data='hello from parent';
+      previousData: string='';
+     inputValue:string ='';
+  changeData() {
+    if(this.inputValue ==='') 
+    this.previousData=this.data;
+   this.data = this.inputValue;
+   this.inputValue='';
+}
    ngOnInit(){
+    this.previousData= this.data;
+
     console.log('component loaded');
    }  
-  
-
-onEmailChange() {
-  this.emailMessage = 'Email value changed!'+ this.email;
-}
-
+ 
  
 }
