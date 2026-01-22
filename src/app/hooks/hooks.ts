@@ -13,6 +13,7 @@ export class Hooks {
     console.log('ngAfterViewInit called');
    }
    ngAfterViewChecked(){
-   // console.log('ngafterviewchecked called');
+    console.log('ngafterviewchecked called');
    }
 }
+
