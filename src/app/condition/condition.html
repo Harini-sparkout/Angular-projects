@@ -1,0 +1,25 @@
+<h3>Angular directives</h3>
+<p *ngIf="age >=18 "[ngStyle]="{'color':age >=25 ? 'green' : 'blue' ,'font-weight':'bold'}"> you are eligible to vote</p>
+<h5>placing index value</h5>
+    <li *ngFor="let student of students ;index as i"> 
+         {{i+1}}.{{student}}</li>
+   <h5>ngFor using array in object</h5>
+<li *ngFor="let game of games" >{{game.name}} {{game.players}}</li>
+<h5>ngFor using in odd/even</h5>
+<ul>
+    <li *ngFor="let festival of festivals; even as isEven;odd as isOdd" [ngClass]="{'even-class':isEven,'odd-class':isOdd}">
+        <span *ngIf="isEven">even:{{festival}}</span>
+        <span *ngIf="isOdd">odd:{{festival}}</span>
+
+    </li>
+</ul>
+
+<h5>ngswitch</h5>
+<div [ngSwitch]='department'>
+    <p *ngSwitchCase="'CSE'">CSE</p>
+    <P *ngSwitchCase="'ECE'">ECE</P>
+    <P *ngSwitchCase="'IT'">IT</P>
+    <P *ngSwitchCase="'EEE'">EEE</P>
+
+</div>
+

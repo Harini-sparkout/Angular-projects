@@ -1,0 +1,10 @@
+.even-class{
+background-color:teal;
+color:white;
+font-weight:bold;
+}
+.odd-class{
+    background-color:blueviolet;
+    color:black;
+    font-style:italic;
+}
