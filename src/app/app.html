@@ -12,14 +12,42 @@
 <app-session></app-session>
 
 
-
+<app-hooks></app-hooks>
 <app-event [data]="data"></app-event>
 
 
 <input type="text" [(ngModel)]="inputValue" placeholder="new value">
 
 <button (click)="changeData()">Change Data</button>
-<app-hooks></app-hooks>
 
 
 
+
+<button  (click)="destroyComponent()" >Destroy Component</button>
+<h1 highlight>custom directive
+</h1>
+    <p [highlight]="'lightgreen'">Hover me! (light green)</p>
+
+
+<app-condition></app-condition>
+<p [hidden] ="isHidden">this line is hidden</p>
+
+<button (click)="isHidden = false">show paragraph</button>
+<button (click)="isHidden = true">hide para</button>
+<input type="text" [(ngModel)]="tempValue" (blur)="updateValue()"/>
+
+<app-child [value]="finalValue"></app-child>
+
+<h4>pipes in angular</h4>
+<p>{{"harinisri"|lowercase|slice:0:5}}</p>
+<p>{{today | date:'fullDate'|uppercase}}</p>
+<p>{{amount|currency:'USD'}}</p>
+<p>{{leader|uppercase}}</p>
+<p>{{"angular pipes"|uppercase}}</p>
+<p>{{"interpolation"}}</p>
+<p>{{"SIVASURYA"|lowercase}}</p>
+<p>{{123.45|number}}</p>
+<p>{{0.35|percent}}</p>
+<p>{{0.75|percent}}</p>
+<p>{{"sparkouttech"|customPipeName}}</p>
+<app-user></app-user>
