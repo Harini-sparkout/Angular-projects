@@ -8,12 +8,15 @@ import { Component,viewChild,AfterViewInit, ViewChild, ElementRef,AfterViewCheck
 })
 export class Hooks {
    @ViewChild('myInput') myInput!: ElementRef;
+   private viewChecked = false;
    ngAfterViewInit(){
-    this.myInput.nativeElement; 
+    
     console.log('ngAfterViewInit called');
    }
-   ngAfterViewChecked(){
-    console.log('ngafterviewchecked called');
-   }
+   ngAfterViewChecked() {
+    if (!this.viewChecked) {
+      console.log('ngAfterViewChecked called');
+      this.viewChecked = true;
+ }
 }
-
+}
